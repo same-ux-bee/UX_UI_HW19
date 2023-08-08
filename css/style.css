@@ -20,6 +20,12 @@ header li {
 header p {
   display: inline-block;
 }
+
+a {
+  color: darkgray;
+  text-decoration: none;
+}
+
 .heroImg {
   background-color: #EBEBEB;
   padding: 100px 15px;
@@ -108,6 +114,7 @@ footer li {
   align-self: end;
   background-color: snow;
   margin-top: 3%;
+  color: black;
 }
 
 button { 
