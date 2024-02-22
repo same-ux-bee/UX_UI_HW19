@@ -1,48 +1,72 @@
-html {
-  scroll-behavior: smooth;
+/* selects all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
 body {
   margin: 0;
 }
+
 header {
   background-color: #373738;
   padding: 15px;
+  height: 75px;
 }
+
 header ul {
   float: right;
   color: white;
+  margin-top: 14px;
 }
+
 header li {
   display: inline-block;
   padding: 0px 5px;
 }
+
 header p {
   display: inline-block;
 }
+
 .heroImg {
   background-color: #EBEBEB;
   padding: 100px 15px;
 }
+
 .content {
-  max-width: 300px;
+  max-width: 40%;
   margin: 0 auto;
   padding: 50px;
   background-color: #FFFFFF;
   text-align: center;
+  border: solid grey 2px;
+  border-radius: 10px;
+  box-shadow: .55em .55em #bbb;
 }
+
+.content img {
+  width:100%;
+}
+
+.content h1 {
+  margin: 15px;
+}
+.content button {
+  margin-top: 25px;
+}
+
 button {
   padding: 15px;
   background-color: #373738;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   border-radius: 4px;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0 0 0 0;
-  padding: 0 0 0 0;
+  text-align: center;
+  letter-spacing: .05em;
+  white-space: nowrap;
 }
 
 #mySkills-container {
@@ -56,7 +80,7 @@ button {
   padding: 3% 3% 5% 3%;
 }
 
-#mySkills-container > h1 {
+#mySkills-container>h1 {
   /* border: green dashed 1.5px; */
   text-align: center;
   width: 98%;
@@ -66,97 +90,69 @@ button {
   padding: 0 0 3% 0;
 }
 
-#mySkills-container > div {
+#mySkills-container>div {
   /* border: blue dashed 1.5px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 31%;
   min-height: 300px;
-}
-
-#mySkills-container img { 
-  width: 200px;
-  align-self: center;
-  padding: 0 0 6% 0;
-}
-
-#mySkills-container p {
-  padding: 3% 5% 0 5%;
-}
-
-/* responsive css properties done with media queries below */
-@media only screen and (max-width: 640px) {
-  #mySkills-container {
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 8% 0% 5% 0%;
-  }
-  #mySkills-container > h1 {
-    padding: 0% 0% 8% 0%;
-  }
-  
-  #mySkills-container > div {
-    max-width: 100%;
-    padding: 0% 0% 0% 0%;
-
-  }
-  
-  #mySkills-container img {
-    padding: 0% 0% 3% 0%;
-  }
-  
-  #mySkills-container p {
-    padding: 2% 7% 10% 8%;
-  }
-}
-/* selects all elements */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-/* GRID container for section */
-#sectionGrid {
-  width: 100vw;
-  padding: 2%;
-  display: grid;
-  grid-template-rows: minmax(max-content, 1fr) repeat(3, minmax(max-content, 3fr)) minmax(max-content, 1fr);
-  grid-auto-flow: row;
-  gap: 3%;
-}
-
-/* NESTED GRID container for card */
-.nested-grid {
-  height: min-content; 
-  padding: 2%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: 1fr;
-  justify-items: center;
-  background-color: azure;
   border: solid grey 2px;
   border-radius: 10px;
   box-shadow: .55em .55em #bbb;
 }
 
-.sectionTitle {
-  width: 100%;
-  height: 3em;
+#mySkills-container img {
+  width: 200px;
   align-self: center;
-  text-align: center;
-  vertical-align: center;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  padding: 6% 0 6% 0;
 }
 
+#mySkills-container p {
+  padding: 3% 8% 7% 8%;
+}
+
+/* GRID container for section */
+#sectionGrid {
+  width: 100vw;
+  padding: 3% 5%;
+  display: grid;
+  grid-template-rows: minmax(max-content, 1fr) repeat(3, minmax(max-content, 3fr)) minmax(max-content, 1fr);
+  grid-auto-flow: row;
+  gap: 3%;
+  background-color: #EBEBEB;
+  padding-bottom: 50px;
+}
+
+/* NESTED GRID container for card */
+.nested-grid {
+  height: min-content;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: center;
+  border: solid grey 2px;
+  border-radius: 10px;
+  box-shadow: .55em .55em #bbb;
+  background-color: #FFFFFF;
+}
+
+.sectionTitle {
+  text-align: center;
+  width: 98%;
+  font-size: xx-large;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  padding: 0 0 3% 0;
+}
 
 .cardLeft-img {
   width: 100%;
   max-height: 25vh;
-  object-fit: scale-down; /* ensures image is always proportionate when size changes due to responsiveness */
+  object-fit: scale-down;
+  align-self: center;
+  /* ensures image is always proportionate when size changes due to responsiveness */
 }
 
 .cardRight-details {
@@ -165,39 +161,70 @@ button {
   flex-direction: column;
   justify-content: space-around;
   align-items: start;
-} 
+}
+
 .cardTitle {
   line-height: 2em;
 }
+
 .cardCTA {
   width: 50%;
   align-self: end;
-  background-color: snow;
   margin-top: 3%;
 }
 
-button { 
-  padding: 1em 1.5em; /* adds space between text and border of button */
-  border: solid 1.5px silver;
-  border-radius: 10px; /* rounds corners of button */
-  box-shadow: .5em .5em #bbb; 
-  text-align: center; /* centers text in button */
-  letter-spacing: .13em; 
-  white-space: nowrap;
-  }
-
 .sectionCTA {
   width: 75%;
-  background-color: lavender;
   justify-self: center;
   align-self: center;
 }
 
+footer {
+  background-color: #373738;
+  padding: 22px 10px;
+  color: white;
+  height: 60px;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 5px;
+}
+
+footer li {
+  display: inline-block;
+  padding: 0px 7px;
+}
 
 /* responsive css properties done with media queries below */
 @media only screen and (max-width: 640px) {
-  
- /* grid container for section -- positions cards into rows */
+
+  /* flex container for section -- positions cards into columns */
+  #mySkills-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 8% 0% 5% 0%;
+  }
+
+  #mySkills-container>h1 {
+    padding: 0% 0% 8% 0%;
+  }
+
+  #mySkills-container>div {
+    max-width: 100%;
+    padding: 0% 0% 0% 0%;
+
+  }
+
+  #mySkills-container img {
+    padding: 0% 0% 3% 0%;
+  }
+
+  #mySkills-container p {
+    padding: 2% 7% 10% 8%;
+  }
+
+  /* grid container for section -- positions cards into rows */
   #section-Grid {
     padding: 4%;
     grid-template-rows: minmax(max-content, .5fr) repeat(3, minmax(max-content, 3fr)) minmax(max-content, .5fr);
@@ -209,25 +236,12 @@ button {
     padding: 5% 3%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(max-content, 1.25fr) minmax(max-content, 2fr); /* positions image and descritions into rows */
+    grid-template-rows: minmax(max-content, 1.25fr) minmax(max-content, 2fr);
+    /* positions image and descritions into rows */
     gap: 3%;
   }
- 
-  .cta {
-  width: 80%;
-  }
-}
 
-footer {
-  background-color: #373738;
-  padding: 5px;
-  color: white;
-}
-footer ul {
-  list-style: none;
-  padding-left: 5px;
-}
-footer li {
-  display: inline-block;
-  padding: 0px 7px;
+  .cta {
+    width: 80%;
+  }
 }
